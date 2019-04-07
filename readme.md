@@ -4,13 +4,13 @@
 
 ## Desc
 
-    tensorRT for Yolov3
+    tensorRT for Yolov3 （win10）
 
 ### Test Enviroments
 
-    Ubuntu  16.04
+    win 10
     TensorRT 5.1/5.0.2.6/4.0.1.6
-    CUDA 9.2 or CUDA 9.0 or CUDA 10.0
+    CUDA 9.0 
 
 ### Models
 
@@ -37,11 +37,8 @@ It also needs to change the yolo configs in "YoloConfigs.h" if different kernels
 
 # build source code
 
-git submodule update --init --recursive
-mkdir build
-cd build && cmake .. && make && make install
-cd ..
 
+导入vs中，生成解决方案后，将“3rdparty/dll/x64”中"pthreadGC2.dll"和"pthreadVC2.dll"复制到输出文件夹中
 
 # what I do
 
@@ -77,10 +74,7 @@ Model | GPU | Mode | Inference Time | FPS
 -- | -- | -- | -- | -- |
 Yolov3-608 | GTX 1060(laptop)(win10) | float32 | 58ms | 15
 Yolov3-608 | GTX 1060(laptop)(win10) | int8 | 33ms | 18
-Yolov3-608 | P40 | float32 | 20ms | 40
-Yolov3-608 | P40 | int8 | 13ms | 50
-Yolov3-416 | P40 | float32 | 12ms | 60
-Yolov3-416 | P40 | int8 | 8ms | 70
+
 
 
 
